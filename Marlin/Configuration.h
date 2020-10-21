@@ -1239,7 +1239,7 @@
  * Normally G28 leaves leveling disabled on completion. Enable
  * this option to have G28 restore the prior leveling state.
  */
-//#define RESTORE_LEVELING_AFTER_G28
+#define RESTORE_LEVELING_AFTER_G28
 
 /**
  * Enable detailed logging of G28, G29, M48, etc.
@@ -1327,7 +1327,7 @@
   //===========================================================================
 
   #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
+  #define GRID_MAX_POINTS_X 5    // Don't use more than 7 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   //#define MESH_G28_REST_ORIGIN // After homing all axes ('G28' or 'G28 XYZ') rest Z at Z_MIN_POS
@@ -1468,10 +1468,28 @@
  *   M501 - Read settings from EEPROM. (i.e., Throw away unsaved changes)
  *   M502 - Revert settings to "factory" defaults. (Follow with M500 to init the EEPROM.)
  */
+
+#define I2C_EEPROM                                // Use external EEPROM Module (e.g. AT24C256) connected to I2C Pins as outlined at https://www.instructables.com/id/BigTreeTech-SKR-Pro-V11-Adding-a-EEPROM/
+#ifdef I2C_EEPROM
+  #define USE_SHARED_EEPROM 1                     // Use Platform-independent Arduino functions for I2C EEPROM
+  #define USE_WIRED_EEPROM 1
+  #undef SPI_EEPROM
+  #undef QSPI_EEPROM
+  #undef SDCARD_EEPROM_EMULATION
+  #undef SRAM_EEPROM_EMULATION
+  #undef FLASH_EEPROM_EMULATION
+  #undef IIC_BL24CXX_EEPROM
+  #undef USE_FALLBACK_EEPROM
+  #undef USE_EMULATED_EEPROM
+
+  #undef E2END                                    // Defined in Arduino Core STM32 to be used with EEPROM emulation. However a real EEPROM to be used
+  #define E2END 0x7FFF                            // EEPROM end address AT24C256 (32kB)
+#endif
+
 #define EEPROM_SETTINGS       // Persistent storage with M500 and M501
 //#define DISABLE_M503        // Saves ~2700 bytes of PROGMEM. Disable for release!
 #define EEPROM_CHITCHAT       // Give feedback on EEPROM commands. Disable to save PROGMEM.
-#define EEPROM_BOOT_SILENT    // Keep M503 quiet and only give errors during first load
+//#define EEPROM_BOOT_SILENT    // Keep M503 quiet and only give errors during first load
 #if ENABLED(EEPROM_SETTINGS)
   //#define EEPROM_AUTO_INIT  // Init EEPROM automatically on any errors.
 #endif
