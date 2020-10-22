@@ -21,9 +21,7 @@
  */
 #pragma once
 
-<<<<<<< HEAD
-#ifndef STM32F767xx
-=======
+
 #if NOT_TARGET(STM32F767xx)
 >>>>>>> bugfix-2.0.x
   #error "Oops! Select an STM32F767 environment"
@@ -45,11 +43,7 @@
 
 /**
  * Timer assignments
-<<<<<<< HEAD
- * 
-=======
  *
->>>>>>> bugfix-2.0.x
  * TIM1 -
  * TIM2 - Hardware PWM (Fan/Heater Pins)
  * TIM3 - Hardware PWM (Servo Pins)
@@ -63,11 +57,7 @@
  * TIM12 -
  * TIM13 -
  * TIM14 - TEMP_TIMER (Marlin)
-<<<<<<< HEAD
- * 
-=======
  *
->>>>>>> bugfix-2.0.x
  */
 #define STEP_TIMER 4
 #define TEMP_TIMER 14
@@ -78,11 +68,7 @@
  * Assignments may not be ideal, and not every assignment has been tested.
  * Proceed at your own risk.
  *                                                            _CN7_
-<<<<<<< HEAD
- *                                              (X_STEP) PC6 | · · | PB8 (X_EN) 
-=======
  *                                              (X_STEP) PC6 | · · | PB8 (X_EN)
->>>>>>> bugfix-2.0.x
  *                                              (X_DIR) PB15 | · · | PB9 (X_CS)
  *                                             (LCD_D4) PB13 | · · | AVDD
  *                 _CN8_                                PB12 | · · | GND
@@ -93,11 +79,7 @@
  *            +5V | · · | PC12                    (SDSS) PA4 | · · | PD15 (LCD_ENABLE)
  *            GND | · · | PD2               (SERVO0_PIN) PB4 | · · | PF12 (LCD_RS)
  *            GND | · · | PG2                                 ￣￣￣
-<<<<<<< HEAD
- *            VIN | · · | PG3                                 
-=======
  *            VIN | · · | PG3
->>>>>>> bugfix-2.0.x
 _*                 ￣￣￣                                      _CN10
  *                                                      AVDD | · · | PF13 (BTN_EN1)
  *                 _CN9_                                AGND | · · | PE9  (BTN_EN2)
@@ -160,11 +142,7 @@ _*                 ￣￣￣                                      _CN10
   #define Z_SERIAL_RX_PIN                   PE12
 
   #define E_SERIAL_TX_PIN                   PG9
-<<<<<<< HEAD
-  #define E_SERIAL_RX_PIN                   PG9      
-=======
   #define E_SERIAL_RX_PIN                   PG9
->>>>>>> bugfix-2.0.x
 #endif
 
 //
@@ -206,11 +184,7 @@ _*                 ￣￣￣                                      _CN10
 //
 // LCD / Controller
 //
-<<<<<<< HEAD
-#if ENABLED(REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER)
-=======
 #if IS_RRD_FG_SC
->>>>>>> bugfix-2.0.x
   #define BEEPER_PIN                        PC7  // LCD_BEEPER
   #define BTN_ENC                           PE11  // BTN_ENC
   #define SD_DETECT_PIN                     PD14
