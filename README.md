@@ -7,6 +7,20 @@
 
 <img align="right" width=175 src="buildroot/share/pixmaps/logo/marlin-250.png" />
 
+## BE AWARE WHEN USING THIS BRANCH 
+
+If you find this branch and for some reason intend to use it please be careful. This is my personal branch that I use for storing my configuration and it can brake your 3D-printer. I take no responsability. It can contain changes that is not even tested on my printer.
+
+I sometimes merge the 2.0.x branch into this branch - it is not done regularly so don't expect to find the latest and greatest version of Marlin.
+
+This configuration is made for my system:
+- Creality Ender 5 (later version with the new leadscrew)
+- Stock display
+- Bigtreetech SKR 1.4 Turbo
+- 3D Touch
+
+## Marlin
+
 Additional documentation can be found at the [Marlin Home Page](https://marlinfw.org/).
 Please test this firmware and let us know if it misbehaves in any way. Volunteers are standing by!
 
