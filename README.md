@@ -9,7 +9,7 @@
 
 ## BE AWARE WHEN USING THIS BRANCH 
 
-If you find this branch and for some reason intend to use it please be careful. This is my personal branch that I use for storing my configuration and it can brake your 3D-printer. I take no responsability. It can contain changes that is not even tested on my printer.
+If you find this branch and for some reason intend to use it please be careful. This is my personal branch that I use for storing my configuration and it can break your 3D-printer. You use it on your own risk. I take no responsability. I am a 3D-printing noob. It can contain changes that is not even tested on my printer.
 
 I sometimes merge the 2.0.x branch into this branch - it is not done regularly so don't expect to find the latest and greatest version of Marlin.
 
