@@ -21,9 +21,7 @@
  */
 #pragma once
 
-
 #if NOT_TARGET(STM32F767xx)
->>>>>>> bugfix-2.0.x
   #error "Oops! Select an STM32F767 environment"
 #endif
 
