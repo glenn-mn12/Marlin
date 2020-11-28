@@ -801,13 +801,18 @@
 #if ENABLED(ASSISTED_TRAMMING)
 
   // Define positions for probing points, use the hotend as reference not the sensor.
-  #define TRAMMING_POINT_XY { {  20, 20 }, { 200,  20 }, { 200, 200 }, { 20, 200 } }
+  // Comment above seems incorrect. 
+  #define TRAMMING_LEFT 45
+  #define TRAMMING_RIGHT 175
+  #define TRAMMING_FRONT 45
+  #define TRAMMING_BACK 175
+  #define TRAMMING_POINT_XY { { TRAMMING_LEFT, TRAMMING_FRONT }, { TRAMMING_RIGHT,  TRAMMING_FRONT }, { TRAMMING_LEFT, TRAMMING_BACK }, { TRAMMING_RIGHT, TRAMMING_BACK } }
 
   // Define positions names for probing points.
-  #define TRAMMING_POINT_NAME_1 "Back-Right"
-  #define TRAMMING_POINT_NAME_2 "Back-Left"
-  #define TRAMMING_POINT_NAME_3 "Front-Left"
-  #define TRAMMING_POINT_NAME_4 "Front-Right"
+  #define TRAMMING_POINT_NAME_1 "Front-Left"
+  #define TRAMMING_POINT_NAME_2 "Front-Right"
+  #define TRAMMING_POINT_NAME_3 "Back-Right"
+  #define TRAMMING_POINT_NAME_4 "Back-Left"
 
   #define RESTORE_LEVELING_AFTER_G35    // Enable to restore leveling setup after operation
   #define REPORT_TRAMMING_MM          // Report Z deviation (mm) for each point relative to the first
@@ -822,7 +827,7 @@
    *   M4: 40 = Clockwise, 41 = Counter-Clockwise
    *   M5: 50 = Clockwise, 51 = Counter-Clockwise
    */
-  #define TRAMMING_SCREW_THREAD 30
+  #define TRAMMING_SCREW_THREAD 40
 
 #endif
 
